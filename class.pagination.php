@@ -58,7 +58,7 @@ if(!class_exists("Pagination")){
 
 
     public function Get_array_pages_responsave(){
-        $pages = ceil(intval($this->__items_count) / intval($this->__max_pages_page));
+        $pages = ceil(intval($this->__items_count) / intval($this->__limitperPage));
         $res = array();
         $this->__CurrentPage--;
         $pointesAdd = false;
@@ -88,7 +88,7 @@ if(!class_exists("Pagination")){
 
 
     public function paging_responsave_rander($ulClasses = "pagination ",$liClasses = "page-item",$aclasses = "page-link" ,$activePage = "active") {
-        $pages = ceil(intval($this->__items_count) / intval($this->__max_pages_page));
+        $pages = ceil(intval($this->__items_count) / intval($this->__limitperPage));
         $res = array("<ul class='".$ulClasses."'>");
         $this->__CurrentPage--;
         $pointesAdd = false;
