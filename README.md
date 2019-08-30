@@ -1,16 +1,16 @@
 # php_pagination
 simple responsive php pagination and randering 
 ```
-$pagination = new Pagination();
-
-$pagination->setItemCount($eventes['count']);
-
-$pagination->setLimitpg(5);
-
-$pagination->SetCurrent($numberpage);
-
-$pagination->Set_max_page_displayed(5);
-$pagination->Set_linkiQuery("http://localhost/CMSEvents/AllEvents./page/{__PAGE__}");
-echo $pagination->paging_responsave_rander();
-print_r($pagination->Get_array_pages_responsave());
+ <?php
+ include_once("class.pagination.php");
+ $pagination = new Pagination();
+$pagination->setItemCount(1000); //count of total items
+$pagination->setLimitpg(5);//set limit elements displayed
+$pagination->SetCurrent($numberpage);//set current page number from 1 
+$pagination->Set_max_page_displayed(5); //set number of pages can be displayed
+$pagination->Set_linkiQuery("http://www.elhawy.it/items./page/{__PAGE__}"); //set Link Query;{__PAGE__} is replaced by Page NUMBER
+echo $pagination->paging_responsave_rander($ulClasses = "pagination ",$liClasses = "page-item",$aclasses = "page-link" ,$activePage = "active");
+ ?>
+ 
+ print_r($pagination->Get_array_pages_responsave());
 ```
